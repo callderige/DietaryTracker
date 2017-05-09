@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_food_entry"
+    android:layout_margin="2dp">
+
+
+    <EditText
+        android:id="@+id/edit_text_food_name"
+        android:layout_width="match_parent"
+        android:inputType="textCapSentences"
+        android:hint="Enter name of food"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_food_calories"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/edit_text_food_name"
+        android:inputType="number"
+        android:hint="Calories"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_food_fat"
+        android:layout_below="@+id/edit_text_food_calories"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Fat"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_food_carbs"
+        android:layout_below="@+id/edit_text_food_fat"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Carbs"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_food_protein"
+        android:layout_below="@+id/edit_text_food_carbs"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Protein"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_below="@+id/edit_text_food_protein"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/textColorPrimary"
+        android:layout_centerInParent="true"
+        android:text="Submit"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+</RelativeLayout>

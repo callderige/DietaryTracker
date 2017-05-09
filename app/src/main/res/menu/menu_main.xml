@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".EntryActivity">
+
+    <item
+        android:id="@+id/newEntry"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="always"
+        android:title="@string/add"/>
+
+    <item
+        android:id="@+id/openStatistics"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:showAsAction="ifRoom"
+        android:title="@string/statistics"/>
+
+    <item
+        android:id="@+id/openSettings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="ifRoom"
+        android:title="@string/settings"/>
+
+    <item
+        android:id="@+id/home"
+        app:showAsAction="never"
+        android:title="@string/home"/>
+</menu>

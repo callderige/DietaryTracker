@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_lifting_entry"
+    android:layout_margin="2dp">
+
+    <EditText
+        android:id="@+id/edit_text_lift_name"
+        android:layout_width="match_parent"
+        android:inputType="textCapSentences"
+        android:hint="Enter lift name"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_lift_sets"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/edit_text_lift_name"
+        android:inputType="number"
+        android:hint="Sets"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_lift_reps"
+        android:layout_below="@+id/edit_text_lift_sets"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Reps"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_text_lift_weight"
+        android:layout_below="@+id/edit_text_lift_reps"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:hint="Weight"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_below="@+id/edit_text_lift_weight"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/textColorPrimary"
+        android:layout_centerInParent="true"
+        android:text="Submit"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+</RelativeLayout>
