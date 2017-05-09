@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.openStatistics:
-                intent = new Intent(this, EntryActivity.class);
+                intent = new Intent(this, StatisticsActivity.class);
                 this.startActivity(intent);
                 break;
 
