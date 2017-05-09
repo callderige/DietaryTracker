@@ -7,8 +7,12 @@
         android:id="@+id/text_view_settings_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:textColor="@color/textColorPrimary"
+        android:background="#7E8AA2"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:layout_marginBottom="3dp"
         android:text="Settings"/>
 
     <EditText
@@ -16,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:layout_margin="2dp"
         android:hint="Enter current weight"/>
 
     <EditText
@@ -23,6 +28,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:layout_margin="2dp"
         android:hint="Enter max calories allowed to consume"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/textColorPrimary"
+        android:layout_margin="12dp"
+        android:text="Save"/>
 
 </LinearLayout>
