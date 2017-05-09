@@ -1,10 +1,9 @@
 package com.example.cliff.dietarytracker;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
     String date;
     int _id;
     public final static String EXTRA_MESSAGE = "com.example.cliff.MESSAGE";
+    public static final String MY_SETTINGS = "mySettings";
+    public static final String MY_WEIGHT = "myWeight";
+    public static final String MY_ALLOWED_CALORIES = "myMaxCalories";
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,7 +214,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setTodaysTracking() {
-        textViewCaloriesToday.setText("Calories today: "+dbFood.findCaloriesToday(date)+ "/1800");
+        sharedPreferences = getSharedPreferences(MY_SETTINGS, Context.MODE_PRIVATE);
+        int maxCalories = sharedPreferences.getInt(MY_ALLOWED_CALORIES, 0);
+        textViewCaloriesToday.setText("Calories today: "+dbFood.findCaloriesToday(date)+ "/"+maxCalories);
 
         if (dbCardio.findCardioToday(date)) {
             checkBoxCardioToday.setChecked(true);
