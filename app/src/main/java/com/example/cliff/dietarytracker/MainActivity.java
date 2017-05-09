@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.openSettings:
-                intent = new Intent(this, EntryActivity.class);
+                intent = new Intent(this, SettingsActivity.class);
                 this.startActivity(intent);
                 break;
 
