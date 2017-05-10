@@ -1,6 +1,5 @@
 package com.example.cliff.dietarytracker;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -136,7 +134,6 @@ public class EditActivity extends AppCompatActivity {
                         ((EditText) view2).setText(row.split("\\|")[i]);
                         ((EditText) view2).setHint(columnHints[0][i-1]+" : "+row.split("\\|")[i]);
                         break;
-
 
                     case "cardio":
                         ((EditText) view2).setText(row.split("\\|")[i]);
