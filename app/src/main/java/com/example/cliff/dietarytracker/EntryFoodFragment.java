@@ -26,7 +26,7 @@ public class EntryFoodFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        this.fragmentView = inflater.inflate(R.layout.activity_entry_food, container, false);
+        this.fragmentView = inflater.inflate(R.layout.fragment_entry_food, container, false);
 
         submit = (Button) fragmentView.findViewById(R.id.submit);
 

@@ -26,7 +26,7 @@ public class EntryCardioFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        this.fragmentView = inflater.inflate(R.layout.activity_entry_cardio, container, false);
+        this.fragmentView = inflater.inflate(R.layout.fragment_entry_cardio, container, false);
 
         submit = (Button) fragmentView.findViewById(R.id.submit);
 

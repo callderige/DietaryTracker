@@ -15,4 +15,25 @@
         android:layout_marginBottom="3dp"
         android:text="Statistics"/>
 
+    <TextView
+        android:id="@+id/text_view_food_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/food_statistics_header"/>
+
+    <TextView
+        android:id="@+id/text_view_cardio_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/cardio_statistics_header"/>
+
+    <TextView
+        android:id="@+id/text_view_lifting_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/lifting_statistics_header"/>
+
 </LinearLayout>

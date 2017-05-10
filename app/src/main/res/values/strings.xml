@@ -4,4 +4,7 @@
     <string name="statistics">Statistics</string>
     <string name="settings">Settings</string>
     <string name="home">Home</string>
+    <string name="food_statistics_header"><u>Food statistics</u></string>
+    <string name="cardio_statistics_header"><u>Cardio statistics</u></string>
+    <string name="lifting_statistics_header"><u>Lifting statistics</u></string>
 </resources>
