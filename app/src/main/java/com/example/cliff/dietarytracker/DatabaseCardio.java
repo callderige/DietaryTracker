@@ -165,4 +165,47 @@ public class DatabaseCardio extends SQLiteOpenHelper {
 
         return true;
     }
+
+    public ArrayList<String> cardioStatistics() {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor =  db.rawQuery( "SELECT name, hours, minutes, distance, laps FROM cardio", null);
+        int totalCardioEntries = 0;
+        int totalHours = 0;
+        int totalMinutes = 0;
+        int totalDistance = 0;
+        int totalLaps = 0;
+        int totalHikes = 0;
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            totalCardioEntries += 1;
+            if (!cursor.getString(cursor.getColumnIndex("hours")).equals("NA")) {
+                totalHours += Integer.parseInt(cursor.getString(cursor.getColumnIndex("hours")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("minutes")).equals("NA")) {
+                totalMinutes += Integer.parseInt(cursor.getString(cursor.getColumnIndex("minutes")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("distance")).equals("NA")) {
+                totalDistance += Integer.parseInt(cursor.getString(cursor.getColumnIndex("distance")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("laps")).equals("NA")) {
+                totalLaps += Integer.parseInt(cursor.getString(cursor.getColumnIndex("laps")));
+            }
+            if (cursor.getString(cursor.getColumnIndex("name")).matches("(?i:.*hike.*)")) {
+                totalHikes += 1;
+            }
+
+            cursor.moveToNext();
+        }
+
+        arrayList.add(totalCardioEntries+"");
+        arrayList.add(totalHours+"");
+        arrayList.add(totalMinutes+"");
+        arrayList.add(totalDistance+"");
+        arrayList.add(totalLaps+"");
+        arrayList.add(totalHikes+"");
+        return arrayList;
+    }
 }

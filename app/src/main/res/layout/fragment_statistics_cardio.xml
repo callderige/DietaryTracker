@@ -6,17 +6,122 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2">
+        android:weightSum="4">
         <TextView
             android:id="@+id/text_view_total_cardio_entries_title"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Total cardio entries"
-            android:layout_weight="1"/>
+            android:layout_weight="3"/>
         <TextView
             android:id="@+id/text_view_total_cardio_entries"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:layout_weight="1"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:id="@+id/text_view_total_cardio_hours_title"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Total hours of cardio recorded"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/text_view_total_cardio_hours"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:layout_weight="1"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:id="@+id/text_view_total_cardio_minutes_title"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Total minutes of cardio recorded"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/text_view_total_cardio_minutes"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:layout_weight="1"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:id="@+id/text_view_total_cardio_distance_title"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Total distance of cardio recorded"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/text_view_total_cardio_distance"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:layout_weight="1"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:id="@+id/text_view_total_cardio_laps_title"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Total laps of cardio recorded"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/text_view_total_cardio_laps"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="0"
+            android:layout_weight="1"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:id="@+id/text_view_total_cardio_hikes_title"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Total hikes recorded"
+            android:layout_weight="3"/>
+        <TextView
+            android:id="@+id/text_view_total_cardio_hikes"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="0"
