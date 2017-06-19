@@ -1,9 +1,12 @@
 package com.example.cliff.dietarytracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -45,5 +48,38 @@ public class StatisticsActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.newEntry:
+                intent = new Intent(this, EntryActivity.class);
+                this.startActivity(intent);
+                break;
+
+            case R.id.openStatistics:
+                intent = new Intent(this, StatisticsActivity.class);
+                this.startActivity(intent);
+                break;
+
+            case R.id.openSettings:
+                intent = new Intent(this, SettingsActivity.class);
+                this.startActivity(intent);
+                break;
+
+            case R.id.home:
+                intent = new Intent(this, MainActivity.class);
+                finish();
+                this.startActivity(intent);
+                return true;
+        }
+
+        return true;
     }
 }
