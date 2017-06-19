@@ -22,8 +22,8 @@ public class StatisticsPagerAdapter extends FragmentStatePagerAdapter {
                 StatisticsCardioFragment statisticsCardioTab = new StatisticsCardioFragment();
                 return statisticsCardioTab;
             case 2:
-                EntryLiftingFragment entryLiftingTab = new EntryLiftingFragment();
-                return entryLiftingTab;
+                StatisticsLiftingFragment statisticsLiftingTab = new StatisticsLiftingFragment();
+                return statisticsLiftingTab;
 
             default:
                 return null;
