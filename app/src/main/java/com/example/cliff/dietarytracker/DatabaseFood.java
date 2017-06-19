@@ -108,7 +108,7 @@ public class DatabaseFood extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT _id, name, calories, fat, carbs, protein FROM food WHERE _id="+_id+"", null);
         cursor.moveToFirst();
 
-        while (cursor.isAfterLast() == false) {
+        while (!cursor.isAfterLast()) {
             for (int i = 0; i < cursor.getColumnCount(); i++) {
                 row += cursor.getString(i)+ "|";
             }
@@ -169,5 +169,49 @@ public class DatabaseFood extends SQLiteOpenHelper {
         db.update("food", contentValues, "_id="+_id, null);
 
         return true;
+    }
+
+    public ArrayList<String> foodStatistics() {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor =  db.rawQuery( "SELECT name, calories, fat, carbs, protein FROM food", null);
+        int totalCalories = 0;
+        int totalFat = 0;
+        int totalCarbs = 0;
+        int totalProtein = 0;
+        int totalBeer = 0;
+        int totalPotato = 0;
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            if (!cursor.getString(cursor.getColumnIndex("calories")).equals("NA")) {
+                totalCalories += Integer.parseInt(cursor.getString(cursor.getColumnIndex("calories")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("fat")).equals("NA")) {
+                totalFat += Integer.parseInt(cursor.getString(cursor.getColumnIndex("fat")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("carbs")).equals("NA")) {
+                totalCarbs += Integer.parseInt(cursor.getString(cursor.getColumnIndex("carbs")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("protein")).equals("NA")) {
+                totalProtein += Integer.parseInt(cursor.getString(cursor.getColumnIndex("protein")));
+            }
+            if (!cursor.getString(cursor.getColumnIndex("name")).matches("(.*)beer(.*)")) {
+                totalBeer += 1;
+            }
+            if (!cursor.getString(cursor.getColumnIndex("name")).matches("(.*)potato(.*)")) {
+                totalPotato += 1;
+            }
+            cursor.moveToNext();
+        }
+
+        arrayList.add(totalCalories+"");
+        arrayList.add(totalFat+"");
+        arrayList.add(totalCarbs+"");
+        arrayList.add(totalProtein+"");
+        arrayList.add(totalBeer+"");
+        arrayList.add(totalPotato+"");
+        return arrayList;
     }
 }
