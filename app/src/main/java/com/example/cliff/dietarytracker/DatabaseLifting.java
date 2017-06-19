@@ -160,4 +160,39 @@ public class DatabaseLifting extends SQLiteOpenHelper {
 
         return true;
     }
+
+    public ArrayList<String> liftingStatistics() {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor =  db.rawQuery( "SELECT name, sets, reps, weight FROM lifting", null);
+        int totalLiftingEntries = 0;
+        String[] highestLift = {"na", "0"};
+        String[] lowestLift = {"na", "9999"};
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            totalLiftingEntries += 1;
+            if (!cursor.getString(cursor.getColumnIndex("weight")).equals("NA")) {
+                if (Integer.parseInt(cursor.getString(cursor.getColumnIndex("weight"))) > Integer.parseInt(highestLift[1])) {
+                    highestLift[0] = cursor.getString(cursor.getColumnIndex("name"));
+                    highestLift[1] = cursor.getString(cursor.getColumnIndex("weight"));
+                }
+            }
+            if (!cursor.getString(cursor.getColumnIndex("weight")).equals("NA")) {
+                if (Integer.parseInt(cursor.getString(cursor.getColumnIndex("weight"))) < Integer.parseInt(lowestLift[1])) {
+                    lowestLift[0] = cursor.getString(cursor.getColumnIndex("name"));
+                    lowestLift[1] = cursor.getString(cursor.getColumnIndex("weight"));
+                }
+            }
+
+            cursor.moveToNext();
+        }
+
+        arrayList.add(totalLiftingEntries+"");
+        arrayList.add(highestLift[0] +" @ "+ highestLift[1]);
+        arrayList.add(lowestLift[0] +" @ "+ lowestLift[1]);
+
+        return arrayList;
+    }
 }
