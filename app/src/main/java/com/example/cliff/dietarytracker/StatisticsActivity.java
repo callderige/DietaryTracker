@@ -29,7 +29,7 @@ public class StatisticsActivity extends AppCompatActivity {
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         statisticsPagerAdapter.setAdapter(adapter);
         statisticsPagerAdapter.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 statisticsPagerAdapter.setCurrentItem(tab.getPosition());
@@ -45,19 +45,5 @@ public class StatisticsActivity extends AppCompatActivity {
 
             }
         });
-//        dbFood = new DatabaseFood(this);
-//        foodStatistics = dbFood.foodStatistics();
-//        textView = (TextView) findViewById(R.id.text_view_total_calories);
-//        textView.setText(foodStatistics.get(0));
-//        textView = (TextView) findViewById(R.id.text_view_total_fat);
-//        textView.setText(foodStatistics.get(1));
-//        textView = (TextView) findViewById(R.id.text_view_total_carbs);
-//        textView.setText(foodStatistics.get(2));
-//        textView = (TextView) findViewById(R.id.text_view_total_protein);
-//        textView.setText(foodStatistics.get(3));
-//        textView = (TextView) findViewById(R.id.text_view_total_beer);
-//        textView.setText(foodStatistics.get(4));
-//        textView = (TextView) findViewById(R.id.text_view_total_potato);
-//        textView.setText(foodStatistics.get(5));
     }
 }

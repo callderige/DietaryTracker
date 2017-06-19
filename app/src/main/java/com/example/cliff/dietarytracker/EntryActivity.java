@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-@SuppressWarnings("deprecation")
 public class EntryActivity extends AppCompatActivity {
     ViewPager entryViewPager;
 
@@ -28,7 +27,7 @@ public class EntryActivity extends AppCompatActivity {
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         entryViewPager.setAdapter(adapter);
         entryViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 entryViewPager.setCurrentItem(tab.getPosition());
