@@ -197,10 +197,10 @@ public class DatabaseFood extends SQLiteOpenHelper {
             if (!cursor.getString(cursor.getColumnIndex("protein")).equals("NA")) {
                 totalProtein += Integer.parseInt(cursor.getString(cursor.getColumnIndex("protein")));
             }
-            if (!cursor.getString(cursor.getColumnIndex("name")).matches("(.*)beer(.*)")) {
+            if (cursor.getString(cursor.getColumnIndex("name")).matches("(?i:.*beer.*)")) {
                 totalBeer += 1;
             }
-            if (!cursor.getString(cursor.getColumnIndex("name")).matches("(.*)potato(.*)")) {
+            if (cursor.getString(cursor.getColumnIndex("name")).matches("(?i:.*potato.*)")) {
                 totalPotato += 1;
             }
             cursor.moveToNext();
