@@ -3,6 +3,7 @@ package com.example.cliff.dietarytracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -154,20 +155,29 @@ public class EditActivity extends AppCompatActivity {
     }
 
     public ArrayList<String> getEditTextFields () {
-        ArrayList<String> listArray = new ArrayList<String>();
+        ArrayList<String> arrayList = new ArrayList<String>();
         LinearLayout layout = (LinearLayout) findViewById(R.id.activity_edit);
 
         for (int i = 0; i < layout.getChildCount(); i++) {
             View view = layout.getChildAt(i);
             if (view instanceof EditText) {
                 if (((EditText) view).getText().toString().trim().equals("")) {
-                    listArray.add("NA");
+                    /* TYPE_CLASS_TEXT const value = 1
+                       TYPE_TEXT_FLAG_CAP_SENTENCES const value = 16384
+                       in activity_edit.xml android:inputType="text|textCapSentences" returns a const value of 16385 */
+                    if (((EditText) view).getInputType() == InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_CAP_SENTENCES) {
+                        arrayList.add("NA");
+                    } else if (((EditText) view).getInputType() == InputType.TYPE_CLASS_NUMBER) {
+                        arrayList.add("0");
+                    } else {
+                        arrayList.add("An error occurred");
+                    }
                 } else {
-                    listArray.add(((EditText) view).getText().toString());
+                    arrayList.add(((EditText) view).getText().toString());
                 }
             }
         }
 
-        return listArray;
+        return arrayList;
     }
 }

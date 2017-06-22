@@ -3,12 +3,14 @@ package com.example.cliff.dietarytracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -62,7 +64,16 @@ public class EntryCardioFragment extends Fragment {
             View view2 = layout.getChildAt(i);
             if (view2 instanceof EditText) {
                 if (((EditText) view2).getText().toString().trim().equals("")) {
-                    arrayList.add("NA");
+                    /* TYPE_CLASS_TEXT const value = 1
+                       TYPE_TEXT_FLAG_CAP_SENTENCES const value = 16384
+                       in fragment_entry_cardio.xml android:inputType="text|textCapSentences" returns a const value of 16385 */
+                    if (((EditText) view2).getInputType() == InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_CAP_SENTENCES) {
+                        arrayList.add("NA");
+                    } else if (((EditText) view2).getInputType() == InputType.TYPE_CLASS_NUMBER) {
+                        arrayList.add("0");
+                    } else {
+                        arrayList.add("An error occurred");
+                    }
                 } else {
                     arrayList.add(((EditText) view2).getText().toString());
                 }

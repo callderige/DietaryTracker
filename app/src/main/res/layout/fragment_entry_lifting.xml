@@ -8,7 +8,7 @@
     <EditText
         android:id="@+id/edit_text_lift_name"
         android:layout_width="match_parent"
-        android:inputType="textCapSentences"
+        android:inputType="text|textCapSentences"
         android:hint="Enter lift name"
         android:layout_height="wrap_content" />
 
