@@ -15,21 +15,62 @@
         android:layout_marginBottom="3dp"
         android:text="Settings"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Calculates Basal Metabolic Rate"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group_genders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:checkedButton="@+id/radio_button_gender_male"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radio_button_gender_male"
+            android:text="Male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/radio_button_gender_female"
+            android:text="Female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
     <EditText
         android:id="@+id/edit_text_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_margin="2dp"
-        android:hint="Enter current weight"/>
+        android:hint="Enter current weight in pounds"/>
 
     <EditText
-        android:id="@+id/edit_text_max_calories"
+        android:id="@+id/edit_text_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_margin="2dp"
-        android:hint="Enter max calories allowed to consume"/>
+        android:hint="Enter current height in inches"/>
+
+    <EditText
+        android:id="@+id/edit_text_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="2dp"
+        android:hint="Enter age"/>
+
+    <EditText
+        android:id="@+id/edit_text_calorie_deficit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="2dp"
+        android:hint="Enter weekly calorie deficit"/>
 
     <Button
         android:id="@+id/save_settings"
