@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_margin="2dp"
-        android:hint="Enter weekly calorie deficit"/>
+        android:hint="Enter daily calorie deficit"/>
 
     <Button
         android:id="@+id/save_settings"
